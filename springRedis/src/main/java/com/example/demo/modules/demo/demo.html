@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id ="app" class="task-cont">
+    <div class="a">++++++++++</div>
+    <div class="b">---------</div>
+</div>
+</body>
+<script>
+    console.log("脚本开始....");
+    //根据类选择器获取dom元素 注意类选择器是个数组需要根据索引获取具体dom
+    var taskCont = document.getElementsByClassName("task-cont")[0];
+
+    //创建一个节点
+    var a=document.createElement('div');
+    a.setAttribute("id","ltxDemo");
+
+    //在某个节点之前追加新元素 第一个参数新元素 ，第二个参数某个节点
+    taskCont.insertBefore(a,taskCont.childNodes[1])
+
+    var ltxDemo = document.getElementById("ltxDemo");
+    ltxDemo.innerHTML = "<div>"+
+        "<button class='ltxb'>按钮</button>"+
+        "<button class='ltxb'>按钮</button>"+
+        "<button class='ltxb'>按钮</button>"+
+        "</div>"+
+    "<style>"+
+    ".ltxb{"+
+    //背景颜色
+    "background-color: white;"+
+            "margin : 10px 0px 15px 5px;"+
+    "}"+
+    "</style>";
+
+    console.log("脚本初始化结束");
+
+</script>
+</html>
